@@ -1,4 +1,124 @@
+/* Tokens come from the Style Guide page in Figma. */
+:root {
+  --primary: #53674e;
+  --dark: #28372c;
+  --accent: #3f5d38;
+  --accent-dark: #245916;
+  --sage: #a5bca3;
+  --mist: #c5cec2;
+  --border: #d9ded6;
+  --cream: #f7f5f0;
+  --ink: #242b26;
+  --text: #000;
+  --placeholder: #949b96;
+  --surface: #fff;
+  --danger: #a63d2f;
+}
+
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Play', system-ui, sans-serif;
+  font-size: 20px;
+}
+h1, h2, h3 { color: var(--ink); font-weight: 400; margin: 0; }
+a { color: inherit; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 240px; height: 60px; padding: 0 24px;
+  border-radius: 10px; border: 1px solid transparent;
+  font: inherit; text-decoration: none; cursor: pointer;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn:disabled { background: var(--mist); color: #fff; border-color: transparent; cursor: not-allowed; }
+.btn-block { width: 100%; }
+.btn-small { min-width: 0; height: 49px; padding: 0 32px; }
+
+/* inputs */
+.field { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.field label, .field-label { font-size: 20px; }
+.field input, .field textarea, .field select {
+  width: 100%; padding: 0 18px; height: 60px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  font: inherit; color: var(--text);
+}
+.field textarea { height: auto; padding: 16px 18px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: var(--placeholder); }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.form-error { color: var(--danger); font-size: 15px; font-weight: 700; margin: 0 0 16px; }
+
+/* role toggle */
+.role-toggle { display: flex; gap: 16px; }
+.role-option {
+  flex: 1; height: 60px; border-radius: 10px; font: inherit; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+}
+.role-option.selected { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* auth pages */
+.auth-page { display: grid; grid-template-columns: 700fr 740fr; min-height: 100vh; }
+.auth-side { background: var(--dark); color: var(--cream); padding: 60px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.auth-side-title { color: var(--cream); font-size: 96px; line-height: 1; }
+.auth-side-kicker { font-size: 64px; margin: 0; color: var(--cream); }
+.auth-side-text { font-size: 24px; color: var(--sage); margin: 0; }
+.auth-main { display: flex; align-items: center; justify-content: center; padding: 40px; }
+.auth-form { width: 100%; max-width: 560px; }
+.auth-title { font-size: 64px; text-align: center; margin-bottom: 8px; }
+.auth-sub { text-align: center; color: var(--primary); margin: 0 0 32px; }
+.auth-switch { text-align: center; font-size: 15px; font-weight: 700; margin-top: 16px; }
+.auth-switch a { color: var(--primary); text-decoration: none; }
+
+/* nav */
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 0 46px; height: 72px; margin-top: 21px; border-bottom: 2px solid var(--border); }
+.nav-links { display: flex; gap: 56px; }
+.nav-links a { text-decoration: none; padding-bottom: 6px; border-bottom: 2px solid transparent; }
+.nav-links a.active { border-bottom-color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-plain { text-decoration: none; }
+.avatar { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--sage); color: var(--ink); }
+.avatar-small { width: 36px; height: 36px; font-size: 16px; }
+.link-button { background: none; border: 0; font: inherit; cursor: pointer; color: var(--primary); }
+
+/* pages */
+.page { padding: 32px 46px 64px; }
+.page-title { font-size: 64px; margin-bottom: 20px; }
+.page-message { padding: 48px 46px; }
+.form-actions { display: flex; justify-content: flex-end; gap: 24px; }
+.new-post .field-narrow { max-width: 337px; }
+.new-post .form-actions { margin-top: 24px; }
+
+/* home */
+.featured { margin-bottom: 32px; }
+.featured-body { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; max-width: 800px; }
+.featured-title { font-size: 40px; }
+.featured-title a, .card-title a { text-decoration: none; }
+.featured-text { margin: 0; font-size: 20px; }
+.pill { height: 31px; padding: 0 20px; border-radius: 16px; border: 0; background: var(--sage); color: var(--text); font: inherit; font-size: 16px; cursor: pointer; }
+.pill.selected, .pill-solid { background: var(--primary); color: #fff; }
+.pill-solid { display: inline-flex; align-items: center; cursor: default; }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.section-title { font-size: 32px; }
+.filters { display: flex; gap: 16px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px; min-height: 260px; }
+.card-category { font-size: 15px; font-weight: 700; color: var(--primary); }
+.card-title { font-size: 24px; }
+.card-text { margin: 0; font-size: 20px; flex: 1; }
+.card-foot { display: flex; justify-content: space-between; align-items: center; font-size: 15px; }
+.byline { display: flex; align-items: center; gap: 12px; font-size: 16px; }
+.byline-date { color: var(--placeholder); }
+.card-comments { color: var(--placeholder); }
+
+@media (max-width: 900px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-side { display: none; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .filters { flex-wrap: wrap; }
+  .btn { min-width: 0; }
 }
