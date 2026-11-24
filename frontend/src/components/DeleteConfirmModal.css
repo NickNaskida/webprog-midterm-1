@@ -1,0 +1,97 @@
+.delete-modal-scrim {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(26, 38, 28, 0.55);
+}
+
+.delete-modal {
+  display: flex;
+  width: min(520px, 100%);
+  max-height: calc(100vh - 32px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  overflow: auto;
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.18);
+}
+
+.delete-modal h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.delete-modal p {
+  width: 100%;
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+}
+
+.delete-modal-actions {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.delete-modal-button {
+  display: inline-flex;
+  width: 200px;
+  height: 56px;
+  flex: 0 1 200px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 20px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.delete-modal-cancel {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.delete-modal-confirm {
+  background: var(--danger);
+  color: var(--surface);
+}
+
+.delete-modal-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+@media (max-width: 560px) {
+  .delete-modal {
+    padding: 28px 24px;
+  }
+
+  .delete-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .delete-modal-button {
+    width: 100%;
+    flex-basis: 56px;
+  }
+}

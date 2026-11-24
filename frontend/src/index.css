@@ -122,3 +122,849 @@ a { color: inherit; }
   .filters { flex-wrap: wrap; }
   .btn { min-width: 0; }
 }
+
+/* pages/PostDetail.css */
+.post-detail {
+  position: relative;
+  min-height: calc(100vh - 93px);
+  padding-top: 32px;
+}
+
+.post-detail .back-link {
+  position: absolute;
+  top: 32px;
+  left: 46px;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.post-detail .post-content {
+  display: flex;
+  width: min(840px, 100%);
+  flex-direction: column;
+  gap: 32px;
+  margin: 60px auto 0;
+}
+
+.post-detail .post-header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.post-detail .post-category {
+  display: inline-flex;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 16px;
+  background: var(--primary);
+  color: var(--surface);
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.post-detail .post-title {
+  width: 100%;
+  color: var(--ink);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+  overflow-wrap: anywhere;
+}
+
+.post-detail .post-byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.post-detail .post-avatar {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 18px;
+  background: var(--sage);
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.post-detail .post-date {
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.post-detail .post-body {
+  width: 100%;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 38px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.post-detail .post-footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.post-detail .post-divider {
+  width: 100%;
+  height: 1px;
+  flex: 0 0 1px;
+  background: var(--border);
+}
+
+.post-detail .post-footer-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.post-detail .post-comment-count {
+  margin: 0;
+  color: var(--primary);
+  font-size: 20px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.post-detail .post-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.post-detail .post-action {
+  display: inline-flex;
+  width: 240px;
+  height: 60px;
+  flex: 0 0 240px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  color: var(--surface);
+  font: inherit;
+  font-size: 20px;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.post-detail .post-action-edit {
+  background: var(--primary);
+}
+
+.post-detail .post-action-delete {
+  background: var(--danger);
+}
+
+.post-detail .post-action:disabled {
+  background: var(--mist);
+  cursor: not-allowed;
+}
+
+.post-detail .post-content > .form-error {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .post-detail .back-link {
+    left: 24px;
+  }
+
+  .post-detail .post-content {
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .post-detail .post-title {
+    font-size: clamp(40px, 8vw, 64px);
+  }
+
+  .post-detail .post-footer-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .post-detail .post-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .post-detail .post-action {
+    width: auto;
+    min-width: min(240px, 100%);
+    flex: 1 1 180px;
+  }
+}
+
+/* pages/EditPost.css */
+.edit-post .page-title {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.edit-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edit-post-form .field {
+  margin-bottom: 0;
+  gap: 10px;
+}
+
+.edit-post-form .field label {
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+}
+
+.edit-post-form .field input,
+.edit-post-form .field textarea,
+.edit-post-form .field select {
+  border-color: var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 20px;
+}
+
+.edit-post-form .field input,
+.edit-post-form .field select {
+  height: 60px;
+  padding: 0 18px;
+}
+
+.edit-post-form .field select {
+  appearance: none;
+}
+
+.edit-post-form .field textarea {
+  height: 200px;
+  min-height: 200px;
+  padding: 16px 18px;
+  line-height: normal;
+  resize: vertical;
+}
+
+.edit-post-form .field-narrow {
+  width: 337px;
+  max-width: 100%;
+}
+
+.edit-post-form .form-error {
+  margin: 0;
+}
+
+.edit-post-form .form-actions {
+  gap: 24px;
+  margin-top: 0;
+}
+
+.edit-post-form .form-actions .btn {
+  width: 240px;
+  min-width: 240px;
+  height: 60px;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: normal;
+}
+
+@media (max-width: 600px) {
+  .edit-post-form .form-actions {
+    flex-wrap: wrap;
+  }
+
+  .edit-post-form .form-actions .btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* pages/MyPosts.css */
+.my-posts .page-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.my-posts-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.my-posts-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.my-posts-title-group p {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+}
+
+.my-posts .my-posts-create {
+  width: 240px;
+  min-width: 240px;
+  height: 60px;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.my-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.my-post-card {
+  display: flex;
+  min-width: 0;
+  min-height: 260px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.my-post-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.my-post-meta {
+  display: flex;
+  min-height: 31px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.my-post-category {
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.my-post-status {
+  display: inline-flex;
+  height: 31px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 16px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.my-post-status.is-published {
+  background: var(--sage);
+}
+
+.my-post-status.is-draft {
+  background: var(--border);
+}
+
+.my-post-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  overflow-wrap: anywhere;
+}
+
+.my-post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.my-post-excerpt {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+  overflow-wrap: anywhere;
+}
+
+.my-post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.my-post-date {
+  color: var(--primary);
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.my-post-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.my-post-action {
+  display: inline-flex;
+  height: 49px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 20px;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.my-post-edit {
+  width: 96px;
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.my-post-delete {
+  width: 112px;
+  background: var(--danger);
+  color: var(--surface);
+}
+
+.my-posts-empty {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.my-posts > .form-error {
+  margin: 0 0 16px;
+}
+
+@media (max-width: 900px) {
+  .my-posts-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-posts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .my-post-card {
+    padding: 18px;
+  }
+
+  .my-post-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-post-actions {
+    width: 100%;
+  }
+
+  .my-post-action {
+    flex: 1;
+  }
+}
+
+/* pages/Categories.css */
+.categories-page {
+  color: var(--text);
+}
+
+.categories-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.categories-heading .page-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.categories-heading p {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+}
+
+.categories-page > .form-error {
+  margin: -8px 0 16px;
+}
+
+.category-add-panel,
+.category-edit-panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.category-add-panel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.category-add-panel h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.category-add-form {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.category-add-field,
+.category-edit-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-add-name {
+  width: 320px;
+  flex: 0 0 320px;
+}
+
+.category-add-description {
+  flex: 1 1 auto;
+}
+
+.category-add-field label,
+.category-edit-field label {
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+}
+
+.category-add-field input,
+.category-edit-field input,
+.category-edit-field textarea {
+  width: 100%;
+  height: 60px;
+  padding: 0 19px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 20px;
+  line-height: normal;
+}
+
+.category-add-field input::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+.category-edit-field input:disabled,
+.category-edit-field textarea:disabled {
+  color: var(--placeholder);
+}
+
+.category-add-button,
+.category-edit-button,
+.category-delete-button,
+.category-save-button,
+.category-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 20px;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.category-add-button {
+  width: 240px;
+  height: 60px;
+  flex: 0 0 240px;
+  background: var(--primary);
+  color: var(--surface);
+}
+
+.category-add-button:disabled,
+.category-save-button:disabled {
+  background: var(--mist);
+  cursor: not-allowed;
+}
+
+.categories-management {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.categories-management.has-editor {
+  grid-template-columns: minmax(0, 888px) minmax(0, 428px);
+}
+
+.categories-list {
+  min-width: 0;
+}
+
+.categories-list > h2 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.category-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-row {
+  display: flex;
+  width: 100%;
+  height: 84px;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.category-details {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-name-count {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.category-name-count h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.category-name-count span {
+  color: var(--primary);
+  font-size: 16px;
+  line-height: normal;
+}
+
+.category-details > p {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.category-edit-button,
+.category-delete-button {
+  height: 49px;
+  flex: 0 0 auto;
+}
+
+.category-edit-button {
+  width: 96px;
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.category-delete-button {
+  width: 112px;
+  background: var(--danger);
+  color: var(--surface);
+}
+
+.category-edit-panel {
+  width: 100%;
+  padding: 24px;
+}
+
+.category-edit-panel > h2 {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.category-edit-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-edit-description textarea {
+  height: 84px;
+  min-height: 84px;
+  padding: 16px 18px;
+  resize: vertical;
+}
+
+.category-edit-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.category-save-button,
+.category-cancel-button {
+  height: 49px;
+  flex: 0 0 auto;
+}
+
+.category-save-button {
+  width: 210px;
+  background: var(--primary);
+  color: var(--surface);
+}
+
+.category-cancel-button {
+  width: 152px;
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.category-save-button:disabled,
+.category-cancel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.categories-empty {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  .categories-management.has-editor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .categories-list,
+  .category-edit-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .category-add-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .category-add-name,
+  .category-add-description,
+  .category-add-button {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .category-row {
+    height: auto;
+    min-height: 84px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .category-actions {
+    align-self: flex-end;
+  }
+
+  .category-edit-actions {
+    flex-wrap: wrap;
+  }
+}
