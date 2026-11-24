@@ -63,5 +63,11 @@ export const api = {
   deletePost: (id) => request(`/posts/${id}`, { method: 'DELETE' }),
 
   // categories
-  getCategories: () => request('/categories'),
+getCategories: () => request('/categories'),
+createCategory: ({ name, description }) =>
+  request('/categories', { method: 'POST', body: { name, description } }),
+updateCategory: (id, fields) =>
+  request(`/categories/${id}`, { method: 'PUT', body: fields }),
+deleteCategory: (id) =>
+  request(`/categories/${id}`, { method: 'DELETE' }),
 }
