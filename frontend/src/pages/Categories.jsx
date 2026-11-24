@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
 import { api } from '../api.js'
 import { useAuth } from '../AuthContext.jsx'
 import DeleteConfirmModal from '../components/DeleteConfirmModal.jsx'
@@ -39,10 +38,9 @@ export default function Categories() {
   }
 
   useEffect(() => {
-    loadCategories(true)
-  }, [])
+    loadCategories(isAdmin)
+  }, [isAdmin])
 
-  if (!user) return <Navigate to="/login" replace />
   if (loading) return <p className="page-message">Loading categories…</p>
 
   function resetAddForm() {
@@ -143,7 +141,11 @@ export default function Categories() {
     <main className={`page categories-page ${isAdmin ? 'is-admin' : 'is-reader'}`}>
       <header className="categories-heading">
         <h1 className="page-title">Categories</h1>
-        <p>Manage the categories used to organise your posts.</p>
+        <p>
+          {isAdmin
+            ? 'Manage the categories used to organise your posts.'
+            : 'Browse categories used to organise posts.'}
+        </p>
       </header>
 
       {error && <p className="form-error" role="alert">{error}</p>}
